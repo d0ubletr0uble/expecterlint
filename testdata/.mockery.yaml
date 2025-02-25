@@ -1,0 +1,5 @@
+issue-845-fix: true
+with-expecter: true
+mockname: "{{ .InterfaceName }}"
+all: true
+inpackage: true
