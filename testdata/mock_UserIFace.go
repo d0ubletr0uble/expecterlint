@@ -21,6 +21,51 @@ func (_m *MockUserIFace) EXPECT() *MockUserIFace_Expecter {
 	return &MockUserIFace_Expecter{mock: &_m.Mock}
 }
 
+// CountUsers provides a mock function with no fields
+func (_m *MockUserIFace) CountUsers() int {
+	ret := _m.Called()
+
+	if len(ret) == 0 {
+		panic("no return value specified for CountUsers")
+	}
+
+	var r0 int
+	if rf, ok := ret.Get(0).(func() int); ok {
+		r0 = rf()
+	} else {
+		r0 = ret.Get(0).(int)
+	}
+
+	return r0
+}
+
+// MockUserIFace_CountUsers_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'CountUsers'
+type MockUserIFace_CountUsers_Call struct {
+	*mock.Call
+}
+
+// CountUsers is a helper method to define mock.On call
+func (_e *MockUserIFace_Expecter) CountUsers() *MockUserIFace_CountUsers_Call {
+	return &MockUserIFace_CountUsers_Call{Call: _e.mock.On("CountUsers")}
+}
+
+func (_c *MockUserIFace_CountUsers_Call) Run(run func()) *MockUserIFace_CountUsers_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run()
+	})
+	return _c
+}
+
+func (_c *MockUserIFace_CountUsers_Call) Return(_a0 int) *MockUserIFace_CountUsers_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockUserIFace_CountUsers_Call) RunAndReturn(run func() int) *MockUserIFace_CountUsers_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // CreateUser provides a mock function with given fields: _a0, _a1
 func (_m *MockUserIFace) CreateUser(_a0 context.Context, _a1 User) error {
 	ret := _m.Called(_a0, _a1)
@@ -122,6 +167,38 @@ func (_c *MockUserIFace_GetUser_Call) Return(_a0 User, _a1 error) *MockUserIFace
 
 func (_c *MockUserIFace_GetUser_Call) RunAndReturn(run func(context.Context, string) (User, error)) *MockUserIFace_GetUser_Call {
 	_c.Call.Return(run)
+	return _c
+}
+
+// Void provides a mock function with no fields
+func (_m *MockUserIFace) Void() {
+	_m.Called()
+}
+
+// MockUserIFace_Void_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'Void'
+type MockUserIFace_Void_Call struct {
+	*mock.Call
+}
+
+// Void is a helper method to define mock.On call
+func (_e *MockUserIFace_Expecter) Void() *MockUserIFace_Void_Call {
+	return &MockUserIFace_Void_Call{Call: _e.mock.On("Void")}
+}
+
+func (_c *MockUserIFace_Void_Call) Run(run func()) *MockUserIFace_Void_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run()
+	})
+	return _c
+}
+
+func (_c *MockUserIFace_Void_Call) Return() *MockUserIFace_Void_Call {
+	_c.Call.Return()
+	return _c
+}
+
+func (_c *MockUserIFace_Void_Call) RunAndReturn(run func()) *MockUserIFace_Void_Call {
+	_c.Run(run)
 	return _c
 }
 

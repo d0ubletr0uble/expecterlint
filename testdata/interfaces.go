@@ -11,4 +11,6 @@ type User struct {
 type UserIFace interface {
 	GetUser(ctx context.Context, name string) (User, error)
 	CreateUser(context.Context, User) error
+	CountUsers() int
+	Void()
 }

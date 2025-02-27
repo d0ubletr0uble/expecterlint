@@ -42,3 +42,14 @@ func Test_InvalidMethod(t *testing.T) {
 	// no function i.MOCK().DoesNotExist(...)
 	i.On("DoesNotExist", mock.Anything, User{}, 123).Return(nil)
 }
+
+func Test_Void(t *testing.T) {
+	u := NewMockUserIFace(t)
+	u.On("Void")        // want `mock\.On\(\"Void\", \.\.\.\) could be replaced with mock\.EXPECT\(\)\.Void\(\.\.\.\)`
+	u.On("Void").Once() // want `mock\.On\(\"Void\", \.\.\.\) could be replaced with mock\.EXPECT\(\)\.Void\(\.\.\.\)`
+}
+
+func Test_Count(t *testing.T) {
+	u := NewMockUserIFace(t)
+	u.On("CountUsers").Return(123) // want `mock\.On\(\"CountUsers\", \.\.\.\) could be replaced with mock\.EXPECT\(\)\.CountUsers\(\.\.\.\)`
+}
