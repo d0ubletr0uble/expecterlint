@@ -1,7 +1,8 @@
 # expecterlint
 
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/d0ubletr0uble/expecterlint)
-![Go Report Card](https://goreportcard.com/badge/github.com/d0ubletr0uble/expecterlint)
+[![Go Report Card](https://goreportcard.com/badge/github.com/d0ubletr0uble/expecterlint)](https://goreportcard.com/report/github.com/d0ubletr0uble/expecterlint)
+[![Go Doc](https://godoc.org/github.com/d0ubletr0uble/expecterlint?status.svg)](https://godoc.org/github.com/d0ubletr0uble/expecterlint)
 
 Since `v2.10.0` [mockery](https://github.com/vektra/mockery) introduced [Expecter Structs](https://vektra.github.io/mockery/latest/features/#expecter-structs). 
 
