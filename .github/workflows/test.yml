@@ -10,5 +10,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 1.24
+      - name: Disable GOPROXY
+        run: go env -w GOPROXY=direct
       - name: Run tests
         run: go test -v -cover -failfast -vet=all -count=1 ./...
