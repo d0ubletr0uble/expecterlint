@@ -1,6 +1,7 @@
 package testdata
 
 import (
+	"context"
 	"log"
 	"testing"
 
@@ -11,7 +12,7 @@ func Test_CreateUser(t *testing.T) {
 	u := NewMockUserIFace(t)
 	u.On("CreateUser", mock.Anything, User{}).Return(nil) // want `mock\.On\(\"CreateUser\", \.\.\.\) could be replaced with mock\.EXPECT\(\)\.CreateUser\(\.\.\.\)`
 
-	err := u.CreateUser(t.Context(), User{})
+	err := u.CreateUser(context.Background(), User{})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -22,14 +23,14 @@ func Test_GetUser(t *testing.T) {
 	userMock. // want `mock\.On\(\"GetUser\", \.\.\.\) could be replaced with mock\.EXPECT\(\)\.GetUser\(\.\.\.\)`
 			On(
 			"GetUser",
-			t.Context(),
+			context.Background(),
 			"test",
 		).Return(User{}, nil)
 }
 
 func Test_Expecter(t *testing.T) {
 	u := NewMockUserIFace(t)
-	u.EXPECT().GetUser(t.Context(), "Bob").Return(User{}, nil) // OK
+	u.EXPECT().GetUser(context.Background(), "Bob").Return(User{}, nil) // OK
 }
 
 func Test_EmptyMethod(t *testing.T) {
