@@ -108,8 +108,8 @@ func firstArg(expr *ast.CallExpr) string {
 
 // hasExpect checks if instead of .On("MethodName", ...) there is callable .EXPECT().MethodName(...)
 func hasExpect(named *types.Named, methodName string) bool {
-	for m := range named.Methods() {
-		if m.Name() == "EXPECT" && expectHasMethod(m, methodName) {
+	for i := range named.NumMethods() {
+		if named.Method(i).Name() == "EXPECT" && expectHasMethod(named.Method(i), methodName) {
 			return true
 		}
 	}
@@ -127,8 +127,8 @@ func expectHasMethod(method *types.Func, methodName string) bool {
 		return false
 	}
 
-	for m := range named.Methods() {
-		if m.Name() == methodName {
+	for i := range named.NumMethods() {
+		if named.Method(i).Name() == methodName {
 			return true
 		}
 	}
