@@ -18,7 +18,7 @@ func Test_CreateUser(t *testing.T) {
 
     err := u.CreateUser(t.Context(), User{})
     if err != nil {
-        log.Fatal(err)
+        t.Error(err)
     }
 }
 ```
@@ -32,7 +32,7 @@ func Test_CreateUser(t *testing.T) {
 
     err := u.CreateUser(t.Context(), User{})
     if err != nil {
-        log.Fatal(err)
+        t.Error(err)
     }
 }
 ```

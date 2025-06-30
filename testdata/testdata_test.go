@@ -2,7 +2,6 @@ package testdata
 
 import (
 	"context"
-	"log"
 	"testing"
 
 	"github.com/stretchr/testify/mock"
@@ -14,7 +13,7 @@ func Test_CreateUser(t *testing.T) {
 
 	err := u.CreateUser(context.Background(), User{})
 	if err != nil {
-		log.Fatal(err)
+		t.Error(err)
 	}
 }
 
