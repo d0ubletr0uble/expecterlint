@@ -5,7 +5,7 @@
 [![Go Doc](https://godoc.org/github.com/d0ubletr0uble/expecterlint?status.svg)](https://godoc.org/github.com/d0ubletr0uble/expecterlint)
 ![Pipeline](https://github.com/d0ubletr0uble/expecterlint/actions/workflows/test.yml/badge.svg)
 
-Since `v2.10.0` [mockery](https://github.com/vektra/mockery) introduced [Expecter Structs](https://vektra.github.io/mockery/latest/features/#expecter-structs). 
+Since `v2.10.0` [mockery](https://github.com/vektra/mockery) introduced [Expecter Structs](https://vektra.github.io/mockery/v3.5/template/testify/#expecter-structs). 
 
 expecterlint checks if calls to `.On("Method")` could be replaced with syntax `.EXPECT().Method()`.
 
